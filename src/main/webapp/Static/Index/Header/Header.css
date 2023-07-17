@@ -1,0 +1,118 @@
+
+header {
+	width: 100%;
+	height: 15vh;
+	padding: 0 1%;
+	position: fixed;
+	box-sizing: border-box;
+	background-color: #00C900;
+	display: flex;
+	flex-direction: row;
+}
+
+.header_box1, .header_box2 {
+	width: 50%;
+}
+
+.header_box1 {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.brand_name, .header_btn_box1 {
+	width: 35%;
+}
+
+.brand_name {
+	padding-bottom: 10px;
+	border-bottom: 2px solid white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.brand_name h1 {
+	color: white;
+	font-family: Arial;
+	margin-right: 0.5rem;
+	position: relative;
+	top: 0.1rem;
+}
+
+.house {
+	width: 35px;
+	height: 35px;
+	fill: white;
+}
+
+.header_btn_box1 {
+	margin-top: 0.2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.about_company, .support {
+	color: white;
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-family: Arial;
+	border-bottom: 1px solid transparent;
+}
+
+.about_company:hover, .support:hover {
+	color: blue;
+	border-bottom: 1px solid blue;
+}
+
+.header_box2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.header_box2 p {
+	color: white;
+	text-align: center;
+	margin-top: 0.5rem;
+	user-select: none;
+	font-family: Arial;
+}
+
+.user_icon, .backet_icon {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: 0.3s;
+	border-radius: 30px;
+	background-color: #0086E8;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.user_icon:hover, .backet_icon:hover {
+	box-shadow: 0px 0px 5px;
+}
+
+.signin_btn, .backet_btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.backet_btn {
+	margin-left: 1.5rem;
+}
+
+.user, .backet {
+	width: 25px;
+	height: 25px;
+	fill: white;
+}
