@@ -4,27 +4,28 @@
 <%@page import="UserPack.Caesar" %>
 
 <%
-	User user = (User)session.getAttribute("User");
+	//User user = (User)session.getAttribute("User");
 	Cookie[] cookie = request.getCookies();
 	String login, pass;
 
 	login = "";
 	pass = "";
 	
-	for (int i = 0; i < cookie.length; i++) {
-		String cookieName = cookie[i].getName();
+	if (cookie != null) {
+		for (int i = 0; i < cookie.length; i++) {
+			String cookieName = cookie[i].getName();
 		
-		if (cookieName.equals("login")) {
-			login = Caesar.caesar(cookie[i].getValue(), "decrypt");
-		}
+			if (cookieName.equals("login")) {
+				login = Caesar.caesar(cookie[i].getValue(), "decrypt");
+			}
 		
-		if (cookieName.equals("pass")) {
-			pass = Caesar.caesar(cookie[i].getValue(), "decrypt");
+			if (cookieName.equals("pass")) {
+				pass = Caesar.caesar(cookie[i].getValue(), "decrypt");
+			}
 		}
-	}
 	
-	if (!login.equals("") && !pass.equals("")) {
-		session.setAttribute("User", User.checkUserInDb(login, pass));
-		user = (User)session.getAttribute("User");
+		if (!login.equals("") && !pass.equals("")) {
+			session.setAttribute("User", User.checkUserInDb(login, pass));
+		}
 	}
 %>

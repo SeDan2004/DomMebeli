@@ -1,11 +1,11 @@
 package UserPack;
 
-import static Database.DomMebeli.conn;
-import static Database.DomMebeli.resSet;
-import static Database.DomMebeli.statement;
-import static Database.DomMebeli.writer;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import Database.DomMebeli;
 
@@ -14,7 +14,11 @@ public class User {
 	private String login;
 	private String password;
 		
-	private Backet[] backets;
+	public static List<Backet> backets = new ArrayList<>();
+	
+	private static Connection conn;
+	private static PreparedStatement statement;
+	private static ResultSet resSet;
 	
 	User(String id, String login, String password) {
 		this.id = id;
@@ -25,7 +29,7 @@ public class User {
 	public static User addUser(String userLogin, String userPass, String userEmail) 
 	throws Exception {
 		try {
-			String id = checkUser(userLogin, userPass);
+			String id = checkUser(userLogin, userEmail, userPass);
 		
 			if (id == null) {
 				String sql = "INSERT INTO users (login, email, password) " + 
@@ -48,8 +52,7 @@ public class User {
 				throw new UserExist("Такой пользователь уже существует!");
 			}
 		} catch (UserExist ex) {
-			writer.println(ex.getMessage());
-			return null;
+			throw ex;
 		}
 	}
 	
@@ -68,19 +71,35 @@ public class User {
 		return resSet.next() ? resSet.getString("id") : null;
 	}
 	
+	public static String checkUser(String userLogin, String userEmail, String userPass)
+	throws Exception {
+		String sql = "SELECT id FROM users WHERE login = ? AND password = ? OR email = ?";
+		
+		conn = DomMebeli.connect();
+		statement = conn.prepareStatement(sql);
+		
+		statement.setString(1, userLogin);
+		statement.setString(2, userPass);
+		statement.setString(3, userEmail);
+		
+		resSet = statement.executeQuery();
+		
+		return resSet.next() ? resSet.getString("id") : null;
+	}
+	
 	public static User checkUserInDb(String userLogin, String userPass)
 	throws Exception {
 		try {
 			String id = checkUser(userLogin, userPass);
-		
+			
 			if (id != null) {
+				backets = Backet.getBackets(id);
 				return new User(id, userLogin, userPass);
 			} else {
 				throw new WrongLoginOrPassword("Указан неверный логин или пароль!");
 			}
 		} catch (WrongLoginOrPassword ex) {
-			writer.println(ex.getMessage());
-			return null;
+			throw ex;
 		}
 	}
 		

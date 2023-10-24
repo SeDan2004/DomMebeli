@@ -1,0 +1,221 @@
+
+.auth_and_reg_form {
+	width: 40%;
+	height: 80vh;
+	display: none;
+	margin: 10vh auto;
+	background-color: #303030;
+}
+
+.auth_and_reg_header, .auth_and_reg_footer {
+	height: 15%;
+}
+
+.auth_and_reg_header {
+	transition: 0.5s;
+	display: flex;
+	flex-direction: row;
+}
+
+.reg_btn, .auth_btn {
+	width: calc(100% / 2);
+	color: white;
+	cursor: default;
+	font-size: 1.5rem;
+	font-family: Arial;
+	user-select: none;
+	transition: 0.5s;
+	background-color: #00C900;
+	box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.not_active {
+	cursor: pointer;
+	background-color: green;
+	box-shadow: 0px 0px 0px 0px black;
+}
+
+.not_active:hover {
+	background-color: #009F00;
+}
+
+.auth_and_reg_content {
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.reg, .auth, .forgot_pass {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.auth, .forgot_pass {
+	opacity: 0;
+}
+
+.auth {
+	display: none;
+	align-items: center;
+}
+
+.forgot_pass {
+	display: none;
+}
+
+.reg_row1, .reg_row2, .fp_row1, .fp_row2 {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.reg_row2, .fp_row2 {
+	margin-top: 1.5rem;
+}
+
+.reg_login_box, .reg_pass_box, .reg_email_box, .reg_repeat_pass_box,
+.fp_email_box, .fp_pass_box, .fp_token_box, .fp_repeat_pass_box {
+	width: calc(100% / 2);
+	padding: 0 5%;
+	display: flex;
+	flex-direction: column;
+}
+
+.auth_login_box, .auth_pass_box, .remember_me_box {
+	width: calc(100% / 2);
+}
+
+.auth_pass_box, .remember_me_box {
+	margin-top: 1.5rem;
+}
+
+.remember_me_box {
+	margin-right: 1.8rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.reg_txt_and_svg, .auth_txt_and_svg, .fp_txt_and_svg {
+	margin-bottom: 0.8rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.reg_txt_and_svg p, .auth_txt_and_svg p, .remember_me_box p, .fp_txt_and_svg p {
+	color: white;
+	font-size: 1rem;
+	font-family: Arial;
+	user-select: none;
+}
+
+.reg_txt_and_svg svg, .auth_txt_and_svg svg, .fp_txt_and_svg svg {
+	width: 25px;
+	height: 25px;
+	fill: white;
+	margin-left: 0.5rem;
+	margin-right: 1rem;
+}
+
+.reg_input, .auth_input, .fp_input {
+	width: 100%;
+	height: 2.5rem;
+	color: white;
+	padding: 0 1rem;
+	font-size: 0.9rem;
+	font-family: Arial;
+	border-radius: 25px;
+	border: none;
+	outline: none;
+	background: none;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5) inset;
+}
+
+.reg_input[type="password"], .auth_input[type="password"], .fp_input[type="password"] {
+	text-align: center;
+}
+
+.auth_input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	margin-left: 0.5rem;
+}
+
+.fp_pass_box, .fp_token_box, .fp_repeat_pass_box {
+	opacity: 50%;
+	pointer-events: none;
+}
+
+.auth_and_reg_footer {
+	padding: 0 5%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.back, .accept, .close, .signin_form_btn {
+	height: 2rem;
+	opacity: 0.5s;
+	color: white;
+	padding: 0 1rem;
+	cursor: pointer;
+	user-select: none;
+	font-size: 1.2rem;
+	font-family: Arial;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.back, .accept {
+	display: none;
+}
+
+.back, .close {
+	background-color: #bf0000;
+}
+
+.accept, .signin_form_btn {
+	margin-left: 1rem;
+	background-color: #0069b7;
+}
+
+.back:hover, .close:hover {
+	background-color: red;
+}
+
+.accept:hover, .signin_form_btn:hover {
+	background-color: #0086E8;
+}
+
+.forgot_pass_p {
+	opacity: 0;
+	color: white;
+	transition: 0.5s;
+	user-select: none;
+	font-family: Arial;
+	font-size: 1.2rem;
+}
+
+.forgot_pass_p:hover {
+	color: blue;
+}
+
+.auth_and_reg_footer_btns {
+	display: flex;
+	flex-direction: row;
+}

@@ -1,11 +1,9 @@
 package UserPack;
 
 
-import static Database.DomMebeli.conn;
-import static Database.DomMebeli.resSet;
-import static Database.DomMebeli.statement;
-import static Database.DomMebeli.writer;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Properties;
 import java.util.Random;
 
@@ -20,6 +18,10 @@ import javax.mail.internet.MimeMessage;
 import Database.DomMebeli;
 
 public class MailSender {
+	
+	private static Connection conn;
+	private static PreparedStatement statement;
+	private static ResultSet resSet;
 	
 	private static String getToken() {
 		String token = "";
@@ -62,7 +64,7 @@ public class MailSender {
 					new Authenticator() {
 						@Override
 						protected PasswordAuthentication getPasswordAuthentication() {
-							return new PasswordAuthentication(from, "password");
+							return new PasswordAuthentication(from, "jjcxvrhcvordqewz");
 						}
 					}
 				);
@@ -81,15 +83,13 @@ public class MailSender {
 					
 					return token;
 				} catch (Exception ex) {
-					writer.println(ex.getMessage());
-					return null;
+					throw ex;
 				}
 			} else {
 				throw new EmailNotFound("Такого Эл.адреса не существует в базе данных!");
 			}
 		} catch (EmailNotFound ex) {
-			writer.println(ex.getMessage());
-			return null;
+			throw ex;
 		}
 	}
 }

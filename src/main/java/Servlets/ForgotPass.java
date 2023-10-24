@@ -1,8 +1,7 @@
 package Servlets;
 
-import static Database.DomMebeli.writer;
-
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import UserPack.MailSender;
 import UserPack.User;
@@ -15,6 +14,8 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet({"/ForgotPass"})
 public class ForgotPass extends HttpServlet {
+	
+	private PrintWriter writer;
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws IOException, ServletException {
@@ -41,7 +42,7 @@ public class ForgotPass extends HttpServlet {
 				token = request.getParameter("token");
 								
 				if (!emailToken.equals(token)) {
-					writer.println("Токены не совпадают!");
+					writer.print("Токены не совпадают!");
 				}
 			}
 			
@@ -53,11 +54,11 @@ public class ForgotPass extends HttpServlet {
 					User.updateUserPass(pass, email);
 					session.removeAttribute("token");
 					
-					writer.println("Пароль был успешно изменён!");
+					writer.print("Пароль был успешно изменён!");
 				}
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace(writer);
+			writer.println(ex.getMessage());
 		}
 	}
 	

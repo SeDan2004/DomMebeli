@@ -1,0 +1,386 @@
+
+.showcase {
+	width: 95%;
+	margin: 10vh auto 4vh auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.showcase_header {
+	width: 100%;
+	height: 6vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.showcase_header_row1, .showcase_header_row2 {
+	width: 100%;
+	flex-direction: row;
+}
+
+.showcase_header_row1 {
+	display: flex;
+	height: 6vh;
+	justify-content: space-between;
+}
+
+.showcase_header_row1_box1, .showcase_header_row1_box2 {
+	display: flex;
+	flex-direction: row;
+}
+
+.showcase_search {
+	display: flex;
+	align-items: center;
+}
+
+.showcase_search svg {
+	width: 30px;
+	height: 30px;
+	fill: gray;
+}
+
+.showcase_search_inp {
+	height: 5vh;
+	width: 25rem;
+	margin-left: 1rem;
+	padding: 0 1.5vh;
+	font-size: 1.2rem;
+	border-radius: 20px;
+}
+
+.product_type_header {
+	color: white;
+	font-family: Arial;
+	padding: 0 12vh;
+	height: 100%;
+	cursor: pointer;
+	user-select: none;
+	background-color: #00C900;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.product_type_header:hover {
+	background-color: #00A600;
+}
+
+.product_type_content {
+	width: 80%;
+	height: fit-content;
+	margin: 0 auto;
+	position: relative;
+	overflow-y: hidden;
+}
+
+.product_type_list {
+	width: 100%;
+	position: relative;
+	top: -25vh;
+}
+
+.product_type_list div:last-of-type {
+	border-radius: 0px 0px 5px 5px;
+}
+
+.product_type_list div:not(:last-of-type) {
+	border-bottom: 1px solid white;
+}
+
+.product_type_list p {
+	padding: 0.5rem 0rem;
+}
+
+.product_type_list_el, .product_type_active {
+	color: white;
+	font-family: Arial;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.product_type_list_el {
+	cursor: pointer;
+	background-color: #009F00;
+}
+
+.product_type_active {
+	cursor: default;
+	background-color: #0068E8;
+}
+
+.product_type_list_el:hover {
+	background-color: #0068E8;
+}
+
+/* .product_type_list_el:last-of-type {
+	border-radius: 0px 0px 5px 5px;
+}
+
+.product_type_list_el:not(:last-of-type) {
+	border-bottom: 1px solid white;
+}
+
+.product_type_list_el p {
+	padding: 0.5rem 0rem;
+} */
+
+.showcase_size {
+	color: white;
+	background-color: #0086E8;
+	overflow-y: hidden;
+	font-family: Arial;
+	margin-left: 2rem;
+	box-shadow: 0px 0px 3px black;
+	border-radius: 5px;
+	font-size: 1.5rem;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.showcase_size div {
+	height: 100%;
+}
+
+.showcase_size p {
+	padding: 1vh 4vh;
+	user-select: none;
+}
+
+.showcase_size div:not(.active_showcase_size):hover {
+	background-color: #0065B0;
+}
+
+.showcase_size div:not(:last-of-type) {
+	border-right: 2px solid white;
+}
+
+.active_showcase_size {
+	cursor: default;
+	background-color: #00C900;
+}
+
+.showcase_header_row2 {
+	height: 7vh;
+	margin-top: 2vh;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.reset_filters, .showcase_cancel_btn, .showcase_accept_btn {
+	opacity: 50%;
+	cursor: pointer;
+	transition: 0.2s;
+	display: none;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.reset_filters {
+	color: white;
+	font-family: Arial;
+	margin: 1vh 0vh;
+	padding: 1vh 3vh;
+	user-select: none;
+	border-radius: 5px;
+	background-color: red;
+	display: none;
+}
+
+.showcase_cancel_btn, .showcase_accept_btn {
+	border-radius: 100%;
+}
+
+.showcase_cancel_btn {
+	padding: 0 1.9vh;
+	background-color: red;
+}
+
+.showcase_accept_btn {
+	margin-left: 1rem;
+	padding: 0 1.5vh;
+	background-color: #0086E8;
+}
+
+.reset_filters:hover, .showcase_cancel_btn:hover, .showcase_accept_btn:hover {
+	opacity: 1
+}
+
+.showcase_cancel_btn svg, .showcase_accept_btn svg {
+	fill: white;
+}
+
+.showcase_cancel_btn svg {
+	width: 25px;
+	height: 25px;
+}
+
+.showcase_accept_btn svg {
+	width: 30px;
+	height: 30px;
+}
+
+.showcase_content {
+	width: 100%;
+	height: fit-content;
+	margin-top: 2vh;
+	padding: 4vh 0vh 0vh 0vh;
+	box-sizing: border-box;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px inset black;
+	display: grid;
+}
+
+.not_found_txt {
+	height: 24.1vh;
+	color: gray;
+	display: none;
+	margin: 0 auto;
+	font-size: 2rem;
+	font-family: Arial;
+}
+
+.product {
+	width: 85%;
+	height: 50vh;
+	margin: 0 auto;
+	margin-bottom: 4vh;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.product img {
+	margin-top: 10%;
+	width: 200px;
+	height: 40%;
+}
+
+.product span {
+	margin-top: 5%;
+	font-size: 0.9rem;
+	text-align: center;
+	font-family: Arial;
+}
+
+.product span:first-of-type {
+	font-size: 1rem;
+}
+
+.product_title {
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.product_btns {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.product_btns div {
+	width: 50%;
+	height: 50%;
+	margin: 0 3%;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.product_btns p {
+	font-size: 1rem;
+	user-select: none;
+	font-family: Arial;
+}
+
+.product_comments_btn, .add_product_btn, .added {
+	padding: 0 3%;
+}
+
+.product_comments_btn {
+	cursor: pointer;
+	background-color: gold;	
+}
+
+.add_product_btn {
+	color: white;
+	cursor: pointer;
+	background-color: #0086E8;
+}
+
+.added {
+	color: white;
+	cursor: default;
+	background-color: #00C900;
+}
+
+.product_comments_btn:hover {
+	background-color: #CAAC00;
+}
+
+.add_product_btn:hover {
+	background-color: #0065B0;
+}
+
+.add_product_btn p, .added p {
+	margin-right: 0.5rem;
+}
+
+.add_product_btn svg, .added svg {
+	width: 20px;
+	height: 20px;
+	fill: white;
+}
+
+.toggle_showcase_btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.prev_showcase_btn, .next_showcase_btn {
+	margin-top: 2vh;
+	opacity: 50%;
+	cursor: pointer;
+	pointer-events: none;
+	border-radius: 100%;
+	background-color: #0086E8;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.next_showcase_btn {
+	margin-left: 1rem;
+}
+
+.prev_showcase_btn:hover, .next_showcase_btn:hover {
+	background-color: #0065B0;
+}
+
+.prev_showcase_btn svg, .next_showcase_btn svg {
+	width: 40px;
+	height: 40px;
+	fill: white;
+	padding: 1vh;
+}
+
+.next_showcase_btn svg {
+	transform: rotate(180deg);
+}

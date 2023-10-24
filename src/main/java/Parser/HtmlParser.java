@@ -1,12 +1,11 @@
 package Parser;
 
-import static Database.DomMebeli.conn;
-import static Database.DomMebeli.resSet;
-import static Database.DomMebeli.statement;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +28,10 @@ public class HtmlParser {
 	private static WebDriver driver;
 	private static ChromeOptions options;
 	private static JavascriptExecutor jse;
+	
+	private static Connection conn;
+	private static PreparedStatement statement;
+	private static ResultSet resSet;
 	
 	private static List<String> categories;
 	private static List<List<String[]>> items;

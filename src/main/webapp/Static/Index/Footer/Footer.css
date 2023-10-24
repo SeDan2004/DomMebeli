@@ -1,0 +1,88 @@
+
+footer {
+	height: fit-content;
+	padding: 0 1%;
+	background-color: #222222;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+footer img {
+	cursor: pointer;
+}
+
+.contact_block {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.contact_block img {
+	width: 30px;
+	height: 30px;
+	user-select: none;
+}
+
+.contact_block, .github_link_box {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.social_networks_box, .address {
+	margin-top: 0.5rem;
+}
+
+.contact_block p {
+	color: white;
+	font-family: Arial;
+	user-select: none;
+	font-size: 1rem;
+}
+
+.social_networks_box {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+/* .social_networks_box img {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+} */
+
+.telegram, .whatsapp {
+	margin-left: 0.5rem;
+}
+
+.white_block {
+	margin-left: 0.8rem;
+}
+
+.white_block {
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.github_link_box {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.github_link_box p {
+	color: white;
+	font-family: Arial;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.github_link_box p:hover {
+	color: blue;
+}
